@@ -36,7 +36,7 @@ namespace Mercado
 }
 
 
-// Classe (Net Framework)
+// Classe Produto (Net Framework)
 
 using System;
 using System.Collections.Generic;
@@ -46,6 +46,7 @@ using System.Threading.Tasks;
 
 namespace Mercado
 {
+    //No programa (Main) utiliza-se P como Produto desta classe.
     class Produto
     {
         public string Nome;
