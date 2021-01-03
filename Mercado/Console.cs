@@ -20,9 +20,9 @@ namespace Mercado
             P.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             Console.WriteLine("Digite a quantidade do produto:");
             P.Quantidade = int.Parse(Console.ReadLine());
-            Console.WriteLine("Diminua a quantidade se quiser:");
+            Console.WriteLine("Diminua a quantidade (opcional)");
             P.DiminuirQuantidade(int.Parse(Console.ReadLine()));
-            Console.WriteLine("Aumente a quantidade se quiser:");
+            Console.WriteLine("Aumente a quantidade (opcional)");
             P.AumentarQuantidade(int.Parse(Console.ReadLine()));
 
             P.CalcularPreco();
