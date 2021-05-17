@@ -1,27 +1,26 @@
-﻿using System;
+using System;
 using System.Globalization;
-namespace Curso
+
+namespace curso
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string produto1 = "Computador";
-            string produto2 = "Mesa de escritório";
-            byte idade = 30;
-            int codigo = 5290;
-            char genero = 'M';
-            double preco1 = 2100.0;
-            double preco2 = 650.50;
-            double medida = 53.234567;
-            Console.WriteLine("Produtos:");
-            Console.WriteLine($"{produto1}, cujo preço é: $ {preco1.ToString("F2")}");
-            Console.WriteLine($"{produto2}, cujo preço é: $ {preco2.ToString("F2")}");
-            Console.WriteLine($"\nRegistro: {idade} anos de idade, código {codigo} e gênero {genero}");
-            Console.WriteLine($"Medida com oito casas decimais: {medida}");
-            Console.WriteLine("Arrendondado (três casas decimais): {0:F3}", medida);
-            Console.WriteLine($"Separador decimal invariant culture: {medida.ToString("F3", CultureInfo.InvariantCulture)}");
-
+            Produto p = new Produto();
+            Console.WriteLine("Entre com os dados do produto:");
+            Console.WriteLine("Nome do produto:");
+            p.Nome = Console.ReadLine();
+            Console.WriteLine("Preço do produto:");
+            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Quantidade do produto:");
+            p.Quantidade = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Dados do produto: {p}");
+            Console.WriteLine("Digite o número de produtos a serem adicionados em estoque:");
+            p.AdicionarProduto(int.Parse(Console.ReadLine()));
+            Console.WriteLine("Digite o número de produtos a serem removidos em estoque:");
+            p.RemoverProduto(int.Parse(Console.ReadLine()));
+            Console.WriteLine($"Dados do produto: {p}");
         }
     }
 }
